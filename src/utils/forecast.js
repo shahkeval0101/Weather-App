@@ -13,7 +13,7 @@ const forecast = (lat, long, callback )=>{
   else{
     const data = body
     // console.log(data.current.weather_descriptions[0] + ". It is currently "+ data.current.temperature + " degrees. It feels like " + data.current.feelslike + " out there" )
-    callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees. It feels like  ${data.current.feelslike} out there`)
+    callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees. It feels like  ${data.current.feelslike} out there. The humidity is ${data.current.humidity}%`)
   }
     
     
