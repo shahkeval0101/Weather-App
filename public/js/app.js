@@ -48,4 +48,7 @@ weatherForm.addEventListener('submit', (e) => {
         })
     })
 })
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
