@@ -36,7 +36,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
-
+    console.log("Browser app.js is triggerd and fetch call is made to weather api on corresponding location")
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
@@ -48,3 +48,4 @@ weatherForm.addEventListener('submit', (e) => {
         })
     })
 })
+

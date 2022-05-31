@@ -101,7 +101,7 @@ const request = require('request')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-const app = express()
+const app = express()//loading express 
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -111,23 +111,23 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
+hbs.registerPartials(partialsPath)//registerting partials with handlebars
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
-console.log(publicDirectoryPath)
+// console.log(publicDirectoryPath)
 
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Andrew Mead'
+        name: 'Keval Shah'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Andrew Mead'
+        name: 'Keval Shah'
     })
 })
 
@@ -135,7 +135,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'Help',
-        name: 'Andrew Mead'
+        name: 'Keval Shah'
     })
 })
 
@@ -146,7 +146,8 @@ app.get('/weather', (req, res) => {
       error: 'You must provide the address'
     })
   }
-  console.log(req.query.address)
+  console.log("node app.js is triggered for corresponding get call")
+  // console.log(req.query.address)
   geocode(req.query.address,(error, {latitude, longitude, location} = {})=>{
     if(error){
        return res.send({error})
@@ -199,7 +200,7 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found.'
     })
 })
-const port =process.env.PORT || 3000
+const port =process.env.PORT || 3000 //environment port variable
 app.listen(port, () => {
     console.log('Server is up on port '+ port)
 })

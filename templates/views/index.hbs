@@ -12,6 +12,7 @@
 
 <body>
     <div class="main-content">
+      {{!-- loading header partials --}}
         {{>header}}
 
         <p>Use this site to get your weather!</p>
@@ -25,8 +26,9 @@
       <p id="message-1"></p>
         <p id="message-2"></p>
     </div>
-
+{{!-- loading footer partials --}}
     {{>footer}}
+    {{!-- loading client side javascript after page is loaded --}}
       <script src="/js/app.js"></script>
 
 </body>
