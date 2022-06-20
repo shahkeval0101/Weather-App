@@ -104,8 +104,11 @@ const forecast = require('./utils/forecast')
 const app = express()//loading express 
 
 // Define paths for Express config
+//for html, css, js, img loading
 const publicDirectoryPath = path.join(__dirname, '../public')
+//for hbs loading
 const viewsPath = path.join(__dirname, '../templates/views')
+// for partials loading
 const partialsPath = path.join(__dirname, '../templates/partials')
 
 // Setup handlebars engine and views location
